@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Code Explainer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f4f6fb;
+      color: #172033;
+    }
+    h1 { color: #5b46d6; }
+    textarea {
+      width: 100%;
+      min-height: 200px;
+      box-sizing: border-box;
+      padding: 14px;
+      border: 1px solid #ccd2df;
+      border-radius: 8px;
+      font: 14px monospace;
+    }
+    button {
+      margin-top: 12px;
+      padding: 12px 18px;
+      background: #5b46d6;
+      color: white;
+      border: 0;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 16px;
+      background: white;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>AI Code Explainer</h1>
+  <p>Paste code below to prepare it for explanation.</p>
+
+  <textarea id="code" placeholder="Paste your code here..."></textarea>
+  <br>
+  <button onclick="explainCode()">Explain my code</button>
+
+  <div id="result">Your code summary will appear here.</div>
+
+  <script>
+    function explainCode() {
+      const code = document.getElementById("code").value.trim();
+      const result = document.getElementById("result");
+
+      if (!code) {
+        result.textContent = "Please paste some code first.";
+        return;
+      }
+
+      result.textContent =
+        "Your code has been received (" + code.length +
+        " characters).\n\nThis is the starter interface. AI-powered " +
+        "explanations will be added after connecting a secure API.";
+    }
+  </script>
+</body>
+</html>
